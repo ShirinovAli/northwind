@@ -39,12 +39,17 @@ export class ProductAddComponent implements OnInit {
       let productModel = Object.assign({}, this.productAddForm.value);
       this.productService.add(productModel).subscribe(
         (response) => {
-          console.log(response);
           this.toastrService.success(response.message, 'Ugurlu emeliyyat');
         },
         (responseError) => {
-          console.log(responseError.error);
-          this.toastrService.error(responseError.error);
+          if (responseError.error.Errors.length > 0) {
+            for (let i = 0; i < responseError.error.Errors.length; i++) {
+              this.toastrService.error(
+                responseError.error.Errors[i].ErrorMessage,
+                'Tesdiqleme xetasi'
+              );
+            }
+          }
         }
       );
     } else {
