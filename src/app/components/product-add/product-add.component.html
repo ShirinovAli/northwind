@@ -1,0 +1,66 @@
+<div class="conent">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Mehsul Elave et</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="productAddForm">
+          <div class="mb-3">
+            <label for="productName">Mehsul Adı</label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="productName"
+                formControlName="productName"
+                class="form-control"
+                placeholder="mehsul adı"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="categoryId">Kateqoriya</label>
+            <div class="form-group">
+              <input
+                type="number"
+                id="categoryId"
+                formControlName="categoryId"
+                class="form-control"
+                placeholder="kateqoriya"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="unitsInStock">Stok sayı</label>
+            <div class="form-group">
+              <input
+                type="number"
+                id="unitsInStock"
+                formControlName="unitsInStock"
+                class="form-control"
+                placeholder="stok sayi"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="unitPrice">Mehsul qiymeti</label>
+            <div class="form-group">
+              <input
+                type="number"
+                id="unitPrice"
+                formControlName="unitPrice"
+                class="form-control"
+                placeholder="mehsul qiymeti"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer text-center">
+        <button class="btn btn-fill btn-primary" (click)="add()">
+          Elave et
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
